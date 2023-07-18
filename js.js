@@ -20,7 +20,7 @@ function generateRandomNumber() {
 
   showGeneratedNumbers();
 
-  if (usedNumbers.size === 90) {
+  if (usedNumbers.size === 91) {
     restartGame();
   }
 }
