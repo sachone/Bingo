@@ -6,6 +6,11 @@ const generatedNumbers = [];
 button.addEventListener('click', generateRandomNumber);
 
 function generateRandomNumber() {
+  if (usedNumbers.size >= 90) {
+    restartGame();
+    return;
+  }
+
   let randomNumber = Math.floor(Math.random() * 90) + 1;
 
   while (usedNumbers.has(randomNumber)) {
@@ -19,10 +24,6 @@ function generateRandomNumber() {
   numberDisplay.innerText = randomNumber;
 
   showGeneratedNumbers();
-
-  if (usedNumbers.size === 91) {
-    restartGame();
-  }
 }
 
 function showGeneratedNumbers() {
@@ -50,4 +51,3 @@ function restartGame() {
   numberDisplay.innerText = '';
   showGeneratedNumbers();
 }
-
